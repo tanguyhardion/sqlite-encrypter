@@ -2,8 +2,101 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:SQLiteEncrypter"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign3.Defaults.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- source color : #6082B6 -->
+            <SolidColorBrush x:Key="Primary"
+                             Color="#a7c8ff" />
+            <SolidColorBrush x:Key="OnPrimary"
+                             Color="#003060" />
+            <SolidColorBrush x:Key="PrimaryContainer"
+                             Color="#004787" />
+            <SolidColorBrush x:Key="OnPrimaryContainer"
+                             Color="#d5e3ff" />
+
+            <SolidColorBrush x:Key="Secondary"
+                             Color="#bdc7dc" />
+            <SolidColorBrush x:Key="OnSecondary"
+                             Color="#273141" />
+            <SolidColorBrush x:Key="SecondaryContainer"
+                             Color="#3d4758" />
+            <SolidColorBrush x:Key="OnSecondaryContainer"
+                             Color="#d9e3f8" />
+
+            <SolidColorBrush x:Key="Error"
+                             Color="#ffb4ab" />
+            <SolidColorBrush x:Key="OnError"
+                             Color="#690005" />
+            <SolidColorBrush x:Key="ErrorContainer"
+                             Color="#93000a" />
+            <SolidColorBrush x:Key="OnErrorContainer"
+                             Color="#ffdad6" />
+
+            <SolidColorBrush x:Key="Background"
+                             Color="#1a1c1e" />
+            <SolidColorBrush x:Key="OnBackground"
+                             Color="#e3e2e6" />
+
+
+            <!-- MD colors -->
+            <SolidColorBrush x:Key="PrimaryHueLightBrush"
+                             Color="#a7c8ff" />
+            <SolidColorBrush x:Key="PrimaryHueLightForegroundBrush"
+                             Color="#003060" />
+            <SolidColorBrush x:Key="PrimaryHueMidBrush"
+                             Color="#a7c8ff" />
+            <SolidColorBrush x:Key="PrimaryHueMidForegroundBrush"
+                             Color="#003060" />
+            <SolidColorBrush x:Key="PrimaryHueDarkBrush"
+                             Color="#a7c8ff" />
+            <SolidColorBrush x:Key="PrimaryHueDarkForegroundBrush"
+                             Color="#003060" />
+
+
+            <!-- styles -->
+            <Style x:Key="MainButton"
+                   TargetType="Button"
+                   BasedOn="{StaticResource MaterialDesignRaisedButton}">
+                <Setter Property="materialDesign:ButtonAssist.CornerRadius"
+                        Value="22" />
+                <Setter Property="Height"
+                        Value="44" />
+                <Setter Property="Padding"
+                        Value="0 0 0 1" />
+                <Setter Property="BorderThickness"
+                        Value="0" />
+                <Setter Property="FontWeight"
+                        Value="Medium" />
+                <Setter Property="FocusVisualStyle"
+                        Value="{x:Null}" />
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver"
+                             Value="True">
+                        <Setter Property="Opacity"
+                                Value="0.92" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style TargetType="TabItem"
+                   BasedOn="{StaticResource MaterialDesignTabItem}">
+                <Style.Triggers>
+                    <Trigger Property="IsSelected"
+                             Value="False">
+                        <Setter Property="Cursor"
+                                Value="Hand" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+
     </Application.Resources>
 </Application>

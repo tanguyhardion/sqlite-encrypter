@@ -4,9 +4,86 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SQLiteEncrypter"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="SQLite Encrypter"
+        Height="375"
+        Width="650"
+        MinHeight="300"
+        MinWidth="400"
+        MaxHeight="450"
+        MaxWidth="780"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid Background="{DynamicResource Background}">
+        <TabControl>
+            <TabItem Header="Encryption">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <TextBox Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                             materialDesign:HintAssist.Hint="Database path"
+                             materialDesign:HintAssist.IsFloating="True"
+                             materialDesign:HintAssist.FloatingOffset="0 -26"
+                             materialDesign:HintAssist.Background="{DynamicResource Background}"
+                             materialDesign:TextFieldAssist.HasLeadingIcon="True"
+                             materialDesign:TextFieldAssist.LeadingIcon="DatabaseOutline"
+                             Margin="15 0"
+                             Padding="16 8 48 8"
+                             FontSize="15"
+                             Height="56"
+                             Foreground="{DynamicResource OnBackground}" />
+
+                    <Button materialDesign:RippleAssist.IsDisabled="True"
+                            ToolTip="Browse..."
+                            HorizontalAlignment="Right"
+                            Margin="0 0 12 0"
+                            BorderThickness="0"
+                            Background="Transparent"
+                            Foreground="{DynamicResource OnBackground}">
+                        <materialDesign:PackIcon Kind="FolderOpen"
+                                                 Width="24"
+                                                 Height="24" />
+                    </Button>
+
+                    <materialDesign:PackIcon Kind="PasswordOutline"
+                                             Grid.Row="1"
+                                             VerticalAlignment="Center"
+                                             Margin="32 0 0 0"
+                                             Width="20"
+                                             Height="20"
+                                             Foreground="#8b8b8e" />
+                    <PasswordBox Style="{StaticResource MaterialDesignOutlinedRevealPasswordBox}"
+                                 materialDesign:HintAssist.Hint="Password"
+                                 materialDesign:HintAssist.Background="{DynamicResource Background}"
+                                 Grid.Row="1"
+                                 Padding="42 16 16 16"
+                                 Margin="15 0"
+                                 FontSize="15"
+                                 Height="56"
+                                 Foreground="{DynamicResource OnBackground}" />
+
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.3*" />
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="0.3*" />
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="1"
+                                Style="{StaticResource MainButton}"
+                                Content="Encrypt" />
+                    </Grid>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Decryption">
+
+            </TabItem>
+        </TabControl>
     </Grid>
+
 </Window>
