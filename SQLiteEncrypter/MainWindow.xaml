@@ -27,7 +27,7 @@
                         <RowDefinition />
                     </Grid.RowDefinitions>
 
-                    <TextBox Text="{Binding FileViewModel.SelectedFilePath}"
+                    <TextBox Text="{Binding SelectedFilePath}"
                              Style="{StaticResource MaterialDesignOutlinedTextBox}"
                              materialDesign:HintAssist.Hint="Database path"
                              materialDesign:HintAssist.IsFloating="True"
@@ -41,7 +41,7 @@
                              Height="56"
                              Foreground="{DynamicResource OnBackground}" />
 
-                    <Button Command="{Binding FileViewModel.BrowseCommand}"
+                    <Button Command="{Binding BrowseCommand}"
                             materialDesign:RippleAssist.IsDisabled="True"
                             ToolTip="Browse..."
                             HorizontalAlignment="Right"
@@ -54,17 +54,17 @@
                                                  Height="24" />
                     </Button>
 
-                    <materialDesign:PackIcon Kind="PasswordOutline"
-                                             Grid.Row="1"
+                    <materialDesign:PackIcon Grid.Row="1"
+                                             Kind="PasswordOutline"
                                              VerticalAlignment="Center"
                                              Margin="32 0 0 0"
                                              Width="20"
                                              Height="20"
                                              Foreground="#8b8b8e" />
-                    <PasswordBox Style="{StaticResource MaterialDesignOutlinedRevealPasswordBox}"
+                    <PasswordBox Grid.Row="1"
+                                 Style="{StaticResource MaterialDesignOutlinedRevealPasswordBox}"
                                  materialDesign:HintAssist.Hint="Password"
                                  materialDesign:HintAssist.Background="{DynamicResource Background}"
-                                 Grid.Row="1"
                                  Padding="42 16 16 0"
                                  Margin="15 0"
                                  FontSize="15"
@@ -85,11 +85,14 @@
                                 Content="Decrypt" />
 
                         <Button Grid.Column="3"
+                                Command="{Binding EncryptCommand}"
                                 Style="{StaticResource FilledButton}"
                                 Content="Encrypt" />
                     </Grid>
 
-                    <materialDesign:Snackbar></materialDesign:Snackbar>
+                    <materialDesign:Snackbar x:Name="SnackbarOne"
+                                             Grid.Row="2"
+                                             MessageQueue="{materialDesign:MessageQueue}" />
                 </Grid>
             </TabItem>
         </TabControl>
