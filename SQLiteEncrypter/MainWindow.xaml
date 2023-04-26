@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SQLiteEncrypter"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:viewmodels="clr-namespace:SQLiteEncrypter.ViewModels"
         mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=viewmodels:MainViewModel}"
         Title="SQLite Encrypter"
         Height="375"
         Width="650"
@@ -17,7 +19,7 @@
 
     <Grid Background="{DynamicResource Background}">
         <TabControl>
-            <TabItem Header="Encryption">
+            <TabItem Header="SQLite Encrypter">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition />
@@ -25,7 +27,8 @@
                         <RowDefinition />
                     </Grid.RowDefinitions>
 
-                    <TextBox Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                    <TextBox Text="{Binding FileViewModel.SelectedFilePath}"
+                             Style="{StaticResource MaterialDesignOutlinedTextBox}"
                              materialDesign:HintAssist.Hint="Database path"
                              materialDesign:HintAssist.IsFloating="True"
                              materialDesign:HintAssist.FloatingOffset="0 -26"
@@ -38,7 +41,8 @@
                              Height="56"
                              Foreground="{DynamicResource OnBackground}" />
 
-                    <Button materialDesign:RippleAssist.IsDisabled="True"
+                    <Button Command="{Binding FileViewModel.BrowseCommand}"
+                            materialDesign:RippleAssist.IsDisabled="True"
                             ToolTip="Browse..."
                             HorizontalAlignment="Right"
                             Margin="0 0 12 0"
@@ -61,7 +65,7 @@
                                  materialDesign:HintAssist.Hint="Password"
                                  materialDesign:HintAssist.Background="{DynamicResource Background}"
                                  Grid.Row="1"
-                                 Padding="42 16 16 16"
+                                 Padding="42 16 16 0"
                                  Margin="15 0"
                                  FontSize="15"
                                  Height="56"
@@ -72,16 +76,21 @@
                             <ColumnDefinition Width="0.3*" />
                             <ColumnDefinition />
                             <ColumnDefinition Width="0.3*" />
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="0.3*" />
                         </Grid.ColumnDefinitions>
+
                         <Button Grid.Column="1"
-                                Style="{StaticResource MainButton}"
+                                Style="{StaticResource OutlinedButton}"
+                                Content="Decrypt" />
+
+                        <Button Grid.Column="3"
+                                Style="{StaticResource FilledButton}"
                                 Content="Encrypt" />
                     </Grid>
+
+                    <materialDesign:Snackbar></materialDesign:Snackbar>
                 </Grid>
-            </TabItem>
-
-            <TabItem Header="Decryption">
-
             </TabItem>
         </TabControl>
     </Grid>

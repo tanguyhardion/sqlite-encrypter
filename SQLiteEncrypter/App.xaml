@@ -62,7 +62,7 @@
 
 
             <!-- styles -->
-            <Style x:Key="MainButton"
+            <Style x:Key="FilledButton"
                    TargetType="Button"
                    BasedOn="{StaticResource MaterialDesignRaisedButton}">
                 <Setter Property="materialDesign:ButtonAssist.CornerRadius"
@@ -81,9 +81,24 @@
                     <Trigger Property="IsMouseOver"
                              Value="True">
                         <Setter Property="Opacity"
-                                Value="0.92" />
+                                Value="0.88" />
                     </Trigger>
                 </Style.Triggers>
+            </Style>
+
+            <Style x:Key="OutlinedButton"
+                   TargetType="Button"
+                   BasedOn="{StaticResource MaterialDesignOutlinedButton}">
+                <Setter Property="materialDesign:ButtonAssist.CornerRadius"
+                        Value="22" />
+                <Setter Property="Height"
+                        Value="44" />
+                <Setter Property="Padding"
+                        Value="0 0 0 1" />
+                <Setter Property="FontWeight"
+                        Value="Medium" />
+                <Setter Property="FocusVisualStyle"
+                        Value="{x:Null}" />
             </Style>
 
             <Style TargetType="TabItem"
