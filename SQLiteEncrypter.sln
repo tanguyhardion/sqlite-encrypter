@@ -5,6 +5,8 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLiteEncrypter", "SQLiteEncrypter\SQLiteEncrypter.csproj", "{C7299E92-D6CD-42F0-8CE5-D71828CFA84E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLiteEncrypter.DAL", "SQLiteEncrypter.DAL\SQLiteEncrypter.DAL.csproj", "{F6F36825-2387-40EF-A91A-80A67785E779}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C7299E92-D6CD-42F0-8CE5-D71828CFA84E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7299E92-D6CD-42F0-8CE5-D71828CFA84E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7299E92-D6CD-42F0-8CE5-D71828CFA84E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6F36825-2387-40EF-A91A-80A67785E779}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6F36825-2387-40EF-A91A-80A67785E779}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6F36825-2387-40EF-A91A-80A67785E779}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6F36825-2387-40EF-A91A-80A67785E779}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

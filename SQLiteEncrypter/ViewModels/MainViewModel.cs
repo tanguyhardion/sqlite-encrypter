@@ -1,5 +1,4 @@
-﻿using Microsoft.Data.Sqlite;
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
 using SQLiteEncrypter.Base;
 using System;
 
@@ -36,14 +35,10 @@ namespace SQLiteEncrypter.ViewModels
                 this.SelectedFilePath = fileDialog.FileName;
             }
         }
-
+ 
         private void EncryptDatabase()
         {
-            var connectionString = new SqliteConnectionStringBuilder(_selectedFilePath)
-            {
-                Mode = SqliteOpenMode.ReadWriteCreate,
-                Password = "123"
-            }.ToString();
+            
         }
 
         public string SelectedFilePath

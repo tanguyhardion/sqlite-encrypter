@@ -31,14 +31,13 @@
                              Style="{StaticResource MaterialDesignOutlinedTextBox}"
                              materialDesign:HintAssist.Hint="Database path"
                              materialDesign:HintAssist.IsFloating="True"
-                             materialDesign:HintAssist.FloatingOffset="0 -26"
                              materialDesign:HintAssist.Background="{DynamicResource Background}"
                              materialDesign:TextFieldAssist.HasLeadingIcon="True"
                              materialDesign:TextFieldAssist.LeadingIcon="DatabaseOutline"
-                             Margin="15 0"
-                             Padding="16 8 48 8"
-                             FontSize="15"
+                             VerticalContentAlignment="Center"
                              Height="56"
+                             Margin="15 0"
+                             FontSize="15"
                              Foreground="{DynamicResource OnBackground}" />
 
                     <Button Command="{Binding BrowseCommand}"
@@ -65,10 +64,12 @@
                                  Style="{StaticResource MaterialDesignOutlinedRevealPasswordBox}"
                                  materialDesign:HintAssist.Hint="Password"
                                  materialDesign:HintAssist.Background="{DynamicResource Background}"
-                                 Padding="42 16 16 0"
+                                 materialDesign:HintAssist.FloatingOffset="0 -27"
+                                 VerticalContentAlignment="Center"
+                                 Height="56"
+                                 Padding="42 0 16 0"
                                  Margin="15 0"
                                  FontSize="15"
-                                 Height="56"
                                  Foreground="{DynamicResource OnBackground}" />
 
                     <Grid Grid.Row="2">
